@@ -23,7 +23,7 @@ public class SearchDemoTest {
 
         $(By.name("user_email")).shouldBe(visible);
         $(By.className("btn")).shouldBe(visible);
-        $(By.tagName("h3)")).shouldBe(visible);
+        $(By.tagName("h3")).shouldBe(visible);
         $(By.linkText("Регистрация нового пользователя в системе")).shouldBe(visible);
         $(By.partialLinkText("Контакты")).shouldBe(visible);
     }
