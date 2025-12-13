@@ -1,5 +1,6 @@
 package work.part02;
 
+import com.codeborne.selenide.WebElementCondition;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -16,6 +17,7 @@ public class AuthorizationTests {
         $(By.id("greeting")).shouldHave(text("Добро пожаловать,"));
 
     }
+
     @Test
     public void test02LoginSuccess() {
         open("https://slqamsk.github.io/cases/slflights/v01/");
