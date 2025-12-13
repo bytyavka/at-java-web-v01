@@ -15,7 +15,6 @@ public class AuthorizationTests {
         $(By.id("password")).type("stand_pass1");
         $(By.id("loginButton")).click();
         $(By.id("greeting")).shouldHave(text("Добро пожаловать,"));
-
     }
 
     @Test
@@ -25,6 +24,14 @@ public class AuthorizationTests {
         $(By.id("password")).type("standard_user");
         $(By.id("loginButton")).click();
         $(By.id("message")).shouldHave(text("Неверное имя пользователя"));
+    }
 
+    @Test
+    public void test03LoginSuccess() {
+        open("https://slqamsk.github.io/cases/slflights/v01/");
+        $(By.id("username")).sendKeys("error_user");
+        $(By.id("password")).type(" erro_pass5");
+        $(By.id("loginButton")).click();
+        $("body").shouldHave(text("Поиск авиабилетов"));
     }
 }
