@@ -7,19 +7,11 @@ import io.qameta.allure.Step;
 
 public class LoginPage {
     SelenideElement
-            username,
-            password,
-            loginButton,
-            errorMessage,
-            greeting;
-
-    public LoginPage() {
-        username = $("#username");
-        password = $("#password");
-        loginButton = $("#loginButton");
-        errorMessage = $("#message");
+        username = $("#username"),
+        password = $("#password"),
+        loginButton = $("#loginButton"),
+        errorMessage = $("#message"),
         greeting = $("#greeting");
-    }
 
     @Step("Вход в систему")
     public void login(String username, String password) {

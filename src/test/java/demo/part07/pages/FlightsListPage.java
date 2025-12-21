@@ -11,14 +11,13 @@ public class FlightsListPage {
             flightsTable = $("#flightsTable"),
             registerButton = $x("//button[.='Зарегистрироваться']");
 
-    @Step("Проверяем, что рейсов не найдено")
-    public void isNoFlights() {
-        flightsTable.shouldHave(text("Рейсов по вашему запросу не найдено."));
-    }
-
     @Step("Выбираем первый рейс в списке")
     public void registerToFirstFlight() {
         this.registerButton.click();
     }
 
+    @Step("Проверяем, что рейсов не найдено")
+    public void isNoFlights() {
+        flightsTable.shouldHave(text("Рейсов по вашему запросу не найдено."));
+    }
 }
