@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class ModalTestshome {
+public class ModalHomeTest {
 //Домашнее задание AT-1 (обязательное): На сайте https://www.specialist.ru/ в модальном окне "Наш сайт использует файлы cookie" нажать "Согласен".
 // Выбрать пункт меню "Форматы обучения", затем "Свободное обучение", затем "Выбрать курс", в поле "Направление" выбрать "Программирование",
 // нажать кнопку "Применить" и убедиться, что на странице есть элемент содержащий текст "Тестирование ПО"
