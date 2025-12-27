@@ -52,7 +52,7 @@ public class SearchPage {
     }
     @Step("Проверка, что кнопка 'Найти' работает")
     public void SetPastDate(){
-        String date = "01.01.2020";
+        String date = "31.12.2023";
         String correctedDate = makeDateCorrect(date);
         this.departureDate.setValue(correctedDate);
     }

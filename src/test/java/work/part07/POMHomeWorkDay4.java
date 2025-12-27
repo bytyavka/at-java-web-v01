@@ -30,6 +30,7 @@ public class POMHomeWorkDay4 {
         sleep(10_000);
     }
 
+    // 1. Вход с пустыми полями
     @Test
     void test01EmptyLoginData() {
         LoginPage myLoginPage = new LoginPage();
@@ -37,7 +38,7 @@ public class POMHomeWorkDay4 {
         myLoginPage.isLoginUnsuccessful();
     }
 
-    // 2. Не задана дата
+    // 2. Вход с корректными данными и отображение ФИО
     @Test
     void test02LogoutButton() {
         LoginPage loginPage = new LoginPage();
@@ -47,6 +48,8 @@ public class POMHomeWorkDay4 {
         SearchPage searchPage = new SearchPage();
         searchPage.logoutExist();
     }
+
+    // 3. Найти рейс
     @Test
     void test03ReturnToSearchPage() {
         LoginPage loginPage = new LoginPage();
@@ -61,6 +64,8 @@ public class POMHomeWorkDay4 {
 
         searchPage.logoutExist();
     }
+
+    // 4. Прошедшая дата
     @Test
     void test04SearchPastDate() {
         LoginPage loginPage = new LoginPage();
@@ -71,5 +76,25 @@ public class POMHomeWorkDay4 {
         searchPage.SetPastDate();
         searchPage.fidnButtonWork();
         searchPage.isDateInPast();
+    }
+
+    // 5. Заблокированный пользователь
+    @Test
+    void test05BlockedUserHomework() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.login("locked_out_user", "lock_pass2");
+        loginPage.isUserBlocked();
+    }
+    // 6. Отсутствует дата
+    @Test
+    void test06LogoutButton() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.login("standard_user", "stand_pass1");
+        loginPage.isLoginSuccessful("Иванов Иван Иванович");
+
+        SearchPage searchPage = new SearchPage();
+        searchPage.search("");
+        searchPage.isDepartureDateEmpty();
+        searchPage.logoutExist();
     }
 }

@@ -44,5 +44,8 @@ public class LoginPage {
 
         this.greeting.shouldHave(text("Добро пожаловать, " + fio + "!"));
     }
-
+    @Step("Заблокированный пользователь")
+    public void isUserBlocked() {
+        this.errorMessage.shouldHave(text("Пользователь заблокирован."));
+    }
 }
